@@ -81,7 +81,14 @@ let g:rspec_command = "!bundle exec rspeccc {spec}"
 
 ### Visual Studio Code
 
-Tasks are a nice way to launch `rspeccc`.
+#### rspec-daemon Extension
+
+[rspec-daemon (tk0miya.rspec-daemon)](https://marketplace.visualstudio.com/items?itemName=tk0miya.rspec-daemon) is a extension dedicated for running rspec-daemon.
+Working out-of-the-box, it even supports watching the current file, running specs on every save.
+
+#### Tasks
+
+[Tasks](https://go.microsoft.com/fwlink/?LinkId=733558) are also a nice way for integration.
 Here is an example `tasks.json` configuration which runs specs under the current cursor location:
 
 ```json
@@ -98,7 +105,7 @@ Here is an example `tasks.json` configuration which runs specs under the current
 }
 ```
 
-Adding a keybindings.json entry for your Task is also recommendable.
+Adding a `keybindings.json` entry for your Task is also recommendable.
 
 ```json
 [
@@ -109,8 +116,6 @@ Adding a keybindings.json entry for your Task is also recommendable.
   }
 ]
 ```
-
-Refer to Visual Studio Code's documentation ([Integrate with External Tools via Tasks](https://go.microsoft.com/fwlink/?LinkId=733558)) for further customization.
 
 ## Development
 
