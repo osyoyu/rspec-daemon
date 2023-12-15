@@ -30,12 +30,13 @@ module RSpec
         end
         option_parser.parse!(argv)
         # Send all other arguments to rspec via the daemon
-        command = argv.join(' ') + "\n"
+        command = argv.join(' ')
 
         begin
           # Open connection to rspec-daemon
           socket = TCPSocket.open(options[:host], options[:port])
           socket.write(command)
+          socket.close_write
           while line = socket.gets # rubocop:disable Lint/AssignmentInCondition
             print line
           end

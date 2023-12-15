@@ -35,7 +35,8 @@ module RSpec
     end
 
     def handle_request(socket)
-      status, out = run(socket.gets)
+      rspec_args = socket.read
+      status, out = run(rspec_args)
 
       socket.puts(status)
       socket.puts(out)
