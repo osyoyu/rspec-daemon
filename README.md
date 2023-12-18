@@ -55,6 +55,8 @@ if Rails.env.test? && ENV['RSPEC_DAEMON']
 end
 ```
 
+This feature requires Rails to be in Zeitwerk mode.
+
 If autoreloading is not configured, you'd need to restart `rspec-daemon` every time you change code under `app/`.
 Spec code (under `spec/`) will be always reloaded regardless of this setting.
 
